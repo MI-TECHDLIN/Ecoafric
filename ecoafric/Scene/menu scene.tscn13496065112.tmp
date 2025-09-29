@@ -1,0 +1,112 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkr2s2niktnsl"]
+
+[ext_resource type="Script" uid="uid://101vvhvttp11" path="res://Scene/menu_scene.gd" id="1_1of82"]
+[ext_resource type="Texture2D" uid="uid://4kl5c5tmcxlo" path="res://mybackground.png" id="1_iy8yo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1of82"]
+texture = ExtResource("1_iy8yo")
+modulate_color = Color(0.47762886, 0.6649622, 0.6649622, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62011"]
+bg_color = Color(11.708403, 11.708403, 11.708403, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="SystemFont" id="SystemFont_8pa4a"]
+
+[node name="MenuScene" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -457.0
+offset_top = -85.0
+offset_right = -74.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1of82")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -121.0
+offset_top = -240.0
+offset_right = 647.0
+offset_bottom = 197.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1of82")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -50.0
+offset_top = -111.0
+offset_right = 233.0
+offset_bottom = 305.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+theme_override_colors/font_focus_color = Color(0.011203093, 0.011203093, 0.011203093, 1)
+theme_override_colors/font_pressed_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+theme_override_colors/font_disabled_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 0.5019608)
+theme_override_colors/icon_pressed_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 0
+theme_override_constants/line_spacing = 34
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_62011")
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+theme_override_colors/font_pressed_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 0
+theme_override_constants/line_spacing = 100
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_62011")
+text = "Tutorial"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+theme_override_colors/font_pressed_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 0
+theme_override_constants/line_spacing = 34
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_62011")
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 216.5
+offset_top = -302.5
+offset_right = 420.5
+offset_bottom = -162.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_8pa4a")
+theme_override_font_sizes/font_size = 70
+text = "Sufric"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exits_pressed"]

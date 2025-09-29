@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://cte35pfqrphfr"]
+
+[ext_resource type="Texture2D" uid="uid://4kl5c5tmcxlo" path="res://mybackground.png" id="1_648dy"]
+[ext_resource type="Script" uid="uid://mf3dudrp4vjd" path="res://Scene/tutorial.gd" id="1_dmkc7"]
+[ext_resource type="Texture2D" uid="uid://oaubq17jfv5o" path="res://R (3).png" id="2_dmkc7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0i241"]
+texture = ExtResource("1_648dy")
+
+[sub_resource type="SystemFont" id="SystemFont_dmkc7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ntsqm"]
+font = SubResource("SystemFont_dmkc7")
+font_size = 50
+outline_color = Color(0.39165816, 0.39165816, 0.39165816, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dmkc7"]
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_dmkc7")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1148.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_0i241")
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Panel"]
+
+[node name="Label" type="Label" parent="Panel/CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.006076389
+anchor_bottom = 0.13271604
+offset_left = 38.0
+offset_top = 147.0
+offset_right = 1083.0
+offset_bottom = 574.0
+text = "Controls:  
+Move: ← →  
+Jump: Space  
+Sacrifice: Press S to give up 1 health 
+and open the gate."
+label_settings = SubResource("LabelSettings_ntsqm")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = -12.0
+offset_right = 128.0
+offset_bottom = 125.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+theme_override_font_sizes/font_size = 20
+theme_override_icons/icon = ExtResource("2_dmkc7")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dmkc7")
+icon = ExtResource("2_dmkc7")
+expand_icon = true
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

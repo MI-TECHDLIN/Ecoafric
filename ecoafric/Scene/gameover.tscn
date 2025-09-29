@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1oknsvabebsd"]
+
+[ext_resource type="Script" uid="uid://q6l2pb0pxi2c" path="res://Scene/gameover.gd" id="1_7l1c0"]
+[ext_resource type="Texture2D" uid="uid://bx51245wk31yj" path="res://Reference-Image.png" id="1_hxj7v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7l1c0"]
+custom_solver_bias = 0.477
+size = Vector2(596, 259.00006)
+
+[node name="Gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7l1c0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(569, 329.99997)
+scale = Vector2(0.5828283, 0.5907407)
+texture = ExtResource("1_hxj7v")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer"]
+texture_filter = 1
+position = Vector2(593, 205)
+shape = SubResource("RectangleShape2D_7l1c0")
+debug_color = Color(1, 1, 1, 0.41960785)
+
+[node name="Label" type="Label" parent="CanvasLayer/CollisionShape2D"]
+offset_left = -292.0
+offset_top = -72.0
+offset_right = 336.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 90
+text = "GAME OVER !"
+
+[node name="Label2" type="Label" parent="CanvasLayer/CollisionShape2D"]
+offset_left = -133.00493
+offset_top = 38.013023
+offset_right = 279.99506
+offset_bottom = 148.01302
+theme_override_font_sizes/font_size = 50
+text = "Chaii sorry"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 368.0
+offset_right = 668.0
+offset_bottom = 437.0
+theme_override_font_sizes/font_size = 40
+text = "Restart"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

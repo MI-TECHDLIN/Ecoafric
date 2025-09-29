@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8ntojrethy5k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8mdi"]
+size = Vector2(13.433334, 13.900001)
+
+[node name="Game" type="Node2D"]
+
+[node name="player" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(415, 299)
+scale = Vector2(4, 6)
+shape = SubResource("RectangleShape2D_i8mdi")
+
+[node name="ColorRect" type="ColorRect" parent="player"]
+offset_left = 109.0
+offset_top = 107.0
+offset_right = 304.0
+offset_bottom = 266.0
+size_flags_stretch_ratio = 0.0
+color = Color(0, 0.11764706, 1, 0.92156863)
+
+[node name="Villagers node" type="Node2D" parent="."]
